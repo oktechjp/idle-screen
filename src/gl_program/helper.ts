@@ -1,26 +1,31 @@
 export interface ColorAdjust {
-    h?: number
-    s?: number
-    l?: number
-    hMul?: number
-    sMul?: number
-    lMul?: number
+  h?: number
+  s?: number
+  l?: number
+  hMul?: number
+  sMul?: number
+  lMul?: number
 }
 
-export function getTodayInstant(timeZone: string, opts: Temporal.PlainTimeLike) {
-    const instant = Temporal.Now.instant()
-    return instant.toZonedDateTimeISO(timeZone).toPlainDate().toPlainDateTime(opts).toZonedDateTime(timeZone).toInstant()
+export function getTodayInstant(
+  timeZone: string,
+  opts: Temporal.PlainTimeLike,
+) {
+  const instant = Temporal.Now.instant()
+  return instant
+    .toZonedDateTimeISO(timeZone)
+    .toPlainDate()
+    .toPlainDateTime(opts)
+    .toZonedDateTime(timeZone)
+    .toInstant()
 }
 
 export function dateToInstant(date: Date | null) {
-  if (!date) return null;
+  if (!date) return null
   return Temporal.Instant.fromEpochMilliseconds(date.getTime())
 }
 
-export function adjust(
-  hex: number,
-  opts: ColorAdjust,
-) {
+export function adjust(hex: number, opts: ColorAdjust) {
   return hexToHsl(hex).adjust(opts).toHex()
 }
 
@@ -36,14 +41,7 @@ export class HSL {
   }
 
   adjust(opts: ColorAdjust) {
-    const {
-    h,
-    s,
-    l,
-    hMul,
-    sMul,
-    lMul,
-  } = opts
+    const { h, s, l, hMul, sMul, lMul } = opts
 
     if (h !== undefined) this.h = h
     if (s !== undefined) this.s = s

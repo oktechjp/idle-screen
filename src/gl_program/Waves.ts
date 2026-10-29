@@ -77,7 +77,7 @@ const fragment = `
   }
 `
 
-export const waves: Program<{ brightness?: number, saturation?: number }> = {
+export const waves: Program<{ brightness?: number; saturation?: number }> = {
   shaders: [
     { type: ShaderType.FRAGMENT, source: fragment },
     { type: ShaderType.VERTEX, source: vertex },

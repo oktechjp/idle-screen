@@ -86,7 +86,7 @@ const fragment = `
   }
 `
 
-export const bubbles: Program<{ brightness?: number, saturation?: number }> = {
+export const bubbles: Program<{ brightness?: number; saturation?: number }> = {
   shaders: [
     { type: ShaderType.FRAGMENT, source: fragment },
     { type: ShaderType.VERTEX, source: vertex },

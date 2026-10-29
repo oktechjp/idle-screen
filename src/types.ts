@@ -12,7 +12,7 @@ export interface DefaultDrawOptions {
 export interface Style<T extends HTMLElement> {
   id?: string
   className?: string
-  style?: HTMLAttributes<T>['style']
+  style?: HTMLAttributes<T>["style"]
 }
 // biome-ignore lint/complexity/noBannedTypes: Its optional
 export interface Program<T extends {} = {}> {

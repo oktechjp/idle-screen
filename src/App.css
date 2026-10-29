@@ -64,7 +64,7 @@ main {
   font-weight: 600;
   opacity: 0.3;
   padding-top: 0.1em;
-  font-size: calc(clamp(28px, 3.5vw, 48px) * .68);
+  font-size: calc(clamp(28px, 3.5vw, 48px) * 0.68);
 }
 #timebar {
   position: fixed;
