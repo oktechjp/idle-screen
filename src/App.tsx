@@ -10,15 +10,20 @@ import {
   DateTimeParam,
   StringParam,
   createEnumParam,
+  NumberParam,
 } from "use-query-params"
 import { Timebar } from "./TimeBar"
 
 const App = () => {
-  const [{ event, until, from, style }] = useQueryParams({
+  const [{ event, until, from, style, brightness, saturation }] = useQueryParams({
     event: StringParam,
     until: DateTimeParam,
     from: DateTimeParam,
-    style: createEnumParam(["waves", "bubbles"]),
+    brightness: {...NumberParam, default: 0.3 },
+    saturation: {...NumberParam, default: 0.2 },
+    style: {...createEnumParam(["waves", "bubbles"]), default: 'waves'},
+  }, {
+    removeDefaultsFromUrl: true
   })
   const untilInstant = dateToInstant(until ?? null)
   const fromInstant = dateToInstant(from ?? null)
@@ -30,7 +35,7 @@ const App = () => {
     <>
       <GLCanvas
         program={style === "waves" ? waves : bubbles}
-        options={{ brightness: 0.3, saturation: 0.2 }}
+        options={{ brightness: brightness ?? 0, saturation: saturation ?? 0 }}
       />
       <div id="top-bar">
         <Logo />
