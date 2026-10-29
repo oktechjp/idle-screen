@@ -1,0 +1,42 @@
+{
+  "name": "screen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rsbuild build",
+    "check": "biome check --write",
+    "dev": "rsbuild",
+    "format": "biome format --write",
+    "preview": "rsbuild preview"
+  },
+  "keywords": [],
+  "type": "module",
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-now-hook": "^0.0.4",
+    "ts-easing": "^0.2.0",
+    "use-query-params": "^2.2.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.3",
+    "@rsbuild/core": "^2.2.14",
+    "@rsbuild/plugin-react": "^2.1.1",
+    "@rsbuild/plugin-type-check": "^1.6.1",
+    "@rstest/adapter-rsbuild": "^0.2.6",
+    "@rstest/core": "^0.9.2",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "happy-dom": "^21.0.4",
+    "typescript": "^7.0.2"
+  },
+  "allowScripts": {
+    "fsevents": false
+  }
+}

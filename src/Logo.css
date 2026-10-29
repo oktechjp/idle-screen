@@ -1,0 +1,8 @@
+.logo {
+  height: clamp(28px, 3.5vw, 48px);
+}
+.logo svg {
+  height: 100%;
+  width: auto;
+  display: block;
+}
