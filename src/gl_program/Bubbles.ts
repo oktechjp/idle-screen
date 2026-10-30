@@ -1,5 +1,5 @@
-import { adjust, endlessBackandForth, getLocations } from "./helper"
 import { type Program, ShaderType } from "../types"
+import { adjust, endlessBackandForth, getLocations } from "./helper"
 
 const vertex = `
   attribute vec2 position;

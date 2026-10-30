@@ -1,4 +1,4 @@
-import { ShaderType, type Program } from "../types"
+import { type Program, ShaderType } from "../types"
 import { adjust, endlessBackandForth, getLocations } from "./helper"
 
 const vertex = `

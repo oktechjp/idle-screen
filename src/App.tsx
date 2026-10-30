@@ -1,4 +1,5 @@
 import "./App.css"
+import { NowProvider } from "react-now-hook"
 import {
   createEnumParam,
   DateTimeParam,
@@ -15,12 +16,13 @@ import { Time } from "./Time"
 import { Timebar } from "./Timebar"
 
 const App = () => {
-  const [{ event, until, from, style, brightness, saturation }] =
+  const [{ event, until, from, style, brightness, saturation, now }] =
     useQueryParams(
       {
         event: StringParam,
         until: DateTimeParam,
         from: DateTimeParam,
+        now: DateTimeParam,
         brightness: { ...NumberParam, default: 0.3 },
         saturation: { ...NumberParam, default: 0.2 },
         style: { ...createEnumParam(["waves", "bubbles"]), default: "waves" },
@@ -36,7 +38,7 @@ const App = () => {
       ? { until: untilInstant, from: fromInstant }
       : null
   return (
-    <>
+    <NowProvider time={dateToInstant(now ?? null)?.epochMilliseconds}>
       <GLCanvas
         program={style === "waves" ? waves : bubbles}
         options={{ brightness: brightness ?? 0, saturation: saturation ?? 0 }}
@@ -46,7 +48,7 @@ const App = () => {
         {event ? <div id="title">{event}</div> : null}
       </div>
       {timeFrame ? <Timebar id="timebar" {...timeFrame} /> : <Time id="now" />}
-    </>
+    </NowProvider>
   )
 }
 
