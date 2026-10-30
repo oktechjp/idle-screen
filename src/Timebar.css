@@ -2,8 +2,15 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: space-between;
 }
 .timebar > * {
   margin: 1.5em;
+}
+.timebar--center {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+.timebar--spacer {
+  /* flex-grow: 0; */
 }
