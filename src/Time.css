@@ -26,5 +26,6 @@
 .time {
   margin-top: 0.75em;
   font-size: clamp(1rem, 2.6vw, 2.25rem);
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text);
+  opacity: 0.8;
 }

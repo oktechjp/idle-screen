@@ -19,6 +19,9 @@ body {
   font-weight: 300;
   color: #fff;
 }
+.screen {
+  color: var(--text);
+}
 canvas {
   position: fixed;
   inset: 0;

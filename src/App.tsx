@@ -3,6 +3,7 @@ import { GLCanvas } from "./GLCanvas"
 import { bubbles } from "./gl_program/Bubbles"
 import { waves } from "./gl_program/Waves"
 import { Logo } from "./Logo"
+import { palette } from "./palette"
 import { Time } from "./Time"
 import { dateToInstant } from "./gl_program/helper"
 import {
@@ -32,7 +33,7 @@ const App = () => {
       ? { until: untilInstant, from: fromInstant }
       : null
   return (
-    <>
+    <div className="screen" style={palette(brightness ?? 0, saturation ?? 0)}>
       <GLCanvas
         program={style === "waves" ? waves : bubbles}
         options={{ brightness: brightness ?? 0, saturation: saturation ?? 0 }}
@@ -42,7 +43,7 @@ const App = () => {
         {event ? <div id="title">{event}</div> : null}
       </div>
       {timeFrame ? <Timebar id="timebar" {...timeFrame} /> : <Time id="now" />}
-    </>
+    </div>
   )
 }
 
