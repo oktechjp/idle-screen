@@ -1,4 +1,4 @@
-import type { HTMLAttributes, StyleHTMLAttributes } from "react"
+import type { HTMLAttributes } from "react"
 
 export interface Shader {
   type: ShaderTypeType

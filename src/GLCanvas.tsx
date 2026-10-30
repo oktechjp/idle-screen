@@ -1,11 +1,11 @@
+import { useEffect, useMemo, useState } from "react"
 import { useNowEffect } from "react-now-hook"
 import type {
   Program,
-  ShaderTypeType,
   ShaderContext,
   ShaderState,
+  ShaderTypeType,
 } from "./types.ts"
-import { useEffect, useMemo, useState } from "react"
 
 function createShader(
   type: ShaderTypeType,
