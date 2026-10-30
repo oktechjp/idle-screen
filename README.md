@@ -17,7 +17,8 @@ The file has everything built in except the Lexend font, which loads from Google
 |---|---|---|
 | `style` | `bubbles` | Background: `waves` (default) or `bubbles` |
 | `event` | `Osaka%20FastHacks` | Event name in the top right |
-| `from` and `until` | `2026-11-14T10:00%2B09:00` | With both set, the start and end time replace the clock in the bottom corners |
+| `from` and `until` | `2026-11-14T10:00%2B09:00` | With both set, the start and end time sit in the bottom corners and the current time moves from one to the other |
+| `now` | `2026-11-14T14:00%2B09:00` | Pretend it is this time, to preview a time bar. Leave it out on a real screen |
 | `brightness` | `0.5` | Lightness of the background colours, from `0` to `1` (default `0.3`) |
 | `saturation` | `0.5` | Saturation of the background colours, from `0` to `1` (default `0.2`) |
 
